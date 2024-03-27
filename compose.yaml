@@ -1,0 +1,29 @@
+services:
+  backstage:
+    image: backstage:11
+    build:
+      context: .
+      dockerfile: packages/backend/Dockerfile
+    depends_on:
+      - postgres
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=superuser
+      - POSTGRES_PASSWORD=mysecretpassword
+      - GITHUB_TOKEN=$GITHUB_TOKEN
+      - GITHUB_CLIENT_ID=$GITHUB_CLIENT_ID
+      - GITHUB_CLIENT_SECRET=$GITHUB_CLIENT_SECRET
+    expose:
+      - "7007"
+    ports:
+      - "7007:7007"
+  postgres:
+    image: "postgres"
+    environment:
+      - POSTGRES_USER=superuser
+      - POSTGRES_PASSWORD=mysecretpassword
+    expose:
+      - "7007"
+    ports:
+      - "5432:5432"
