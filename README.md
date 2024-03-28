@@ -12,7 +12,7 @@
 GITHUB_TOKEN=
 GITHUB_CLIENT_ID=
 GITHUB_CLIENT_SECRET=
-´´´´
+´´´
 
 [Authentication with github](https://backstage.io/docs/getting-started/config/authentication)
 [Github Integration](https://backstage.io/docs/getting-started/config/authentication#setting-up-a-github-integration)
